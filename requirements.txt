@@ -1,0 +1,8 @@
+pandas
+seaborn
+matplotlib
+psutil
+findspark
+jupyter
+notebook
+pyspark==3.5.0

@@ -1,0 +1,15 @@
+# Docker Compose V2'de 'version' etiketine gerek yoktur, ancak eski
+# sistemlerle uyumluluk için bırakılabilir veya tamamen silinebilir.
+# version: '3.8'
+
+services:
+  pyspark_project:
+    build: .
+    container_name: bigdata_final_project
+    ports:
+      - "8888:8888"  # Jupyter Notebook erişimi için
+      - "4040:4040"  # Spark UI erişimi için (Spark işlerini izlemek adına)
+    volumes:
+      # Mevcut dizini (.), konteynerdeki /app dizinine bağla.
+      # Bu sayede notebook'taki değişiklikler anında bilgisayarına yansır.
+      - .:/app
